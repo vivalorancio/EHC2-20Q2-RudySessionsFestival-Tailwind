@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+
+/**
+ * Import variables
+ */
+
+//@import 'variables';
+
+/**
+ * Import npm dependencies
+ * see: https://en.parceljs.org/module_resolution.html
+ * see commented examples below
+ */
+
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+/**
+ * Import layouts
+ * It's a best practice to use a partial for each page
+ */
+
+//@import 'layouts/home';
+
+/**
+ * Do NOT include anything else in this file!
+ */
+@tailwind utilities;
+
+@layer utilities {
+  .font-variant-smallcaps {
+    font-variant: small-caps;
+  }
+
+  @variants responsive {
+    .flex-basis-48 {
+      flex-basis: 48%;
+    }
+
+    .flex-basis-31 {
+      flex-basis: 31%;
+    }
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply box-border max-w-screen-xl my-0 mx-auto;
+  }
+
+  .nav-item-header {
+    @apply py-2 px-4 no-underline text-blaumari hover:text-roig;
+  }
+
+  .nav-item-footer {
+    @apply py-2 px-4 no-underline text-blanc hover:text-blaumari;
+  }
+
+  .card {
+    @apply box-border flex flex-col border rounded border-solid border-roig bg-blanc-light p-5 mb-2.5 text-center md:mx-1 md:mb-5 md:flex-grow md:flex-shrink-0 md:flex-basis-48 lg:flex-basis-31;
+  }
+
+  .boto {
+    @apply inline-block text-center align-middle border rounded border-solid border-roig bg-roig text-blanc py-1.5 px-3 text-base transition hover:border-roig-dark hover:bg-roig-dark;
+  }
+}
